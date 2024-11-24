@@ -40,12 +40,6 @@ Data Science and Machine Learning professional with experience in building end-t
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
 ![Jira](https://img.shields.io/badge/-Jira-0052CC?style=flat&logo=jira&logoColor=white)
 
-## 📈 GitHub Stats
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=PranavKuramkoteSudhir&show_icons=true&theme=radical)
-
-## 🔥 Streak Stats
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=PranavKuramkoteSudhir&theme=dark)](https://git.io/streak-stats)
-
 ## 📫 Connect with me:
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pranav-kuramkote-sudhir-a46359168/)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/PranavKuramkoteSudhir)
