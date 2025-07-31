@@ -15,12 +15,26 @@ jobs:
 
       - name: Fetch LeetCode Stats
         run: |
-          curl -o leetcode-card.png "https://leetcard.jacoblin.cool/PranavKuramkoteSudhir?theme=dark&ext=heatmap"
+          curl -L -H "Accept: image/png" -o leetcode-card.png \
+          "https://leetcard.jacoblin.cool/PranavKuramkoteSudhir?theme=dark&ext=heatmap"
+          
+          # Check the file type to make sure it’s really a PNG
+          file leetcode-card.png
+
+      - name: Validate PNG (optional safety step)
+        run: |
+          if file leetcode-card.png | grep -q "PNG image data"; then
+            echo "PNG verified"
+          else
+            echo "Not a valid PNG, aborting commit"
+            rm leetcode-card.png
+            exit 1
+          fi
 
       - name: Commit & Push updated card
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add leetcode-card.png
-          git commit -m "Update LeetCode stats"
+          git commit -m "Update LeetCode stats" || echo "No changes to commit"
           git push
