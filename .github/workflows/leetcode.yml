@@ -2,8 +2,8 @@ name: LeetCode Stats Updater
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # runs every day at midnight UTC
-  workflow_dispatch:      # allows you to trigger manually
+    - cron: '0 0 * * *'  
+  workflow_dispatch:     
 
 jobs:
   update-readme:
@@ -12,29 +12,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  
 
       - name: Fetch LeetCode Stats
         run: |
-          curl -L -H "Accept: image/png" -o leetcode-card.png \
-          "https://leetcard.jacoblin.cool/PranavKuramkoteSudhir?theme=dark&ext=heatmap"
-          
-          # Check the file type to make sure it’s really a PNG
-          file leetcode-card.png
-
-      - name: Validate PNG (optional safety step)
-        run: |
-          if file leetcode-card.png | grep -q "PNG image data"; then
-            echo "PNG verified"
-          else
-            echo "Not a valid PNG, aborting commit"
-            rm leetcode-card.png
-            exit 1
-          fi
+          curl -o leetcode-card.png "https://leetcard.jacoblin.cool/PranavKuramkoteSudhir?theme=dark&ext=heatmap"
 
       - name: Commit & Push updated card
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git pull --rebase origin main   
           git add leetcode-card.png
           git commit -m "Update LeetCode stats" || echo "No changes to commit"
-          git push
+          git push origin main
