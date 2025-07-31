@@ -1,0 +1,26 @@
+name: LeetCode Stats Updater
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # runs every day at midnight UTC
+  workflow_dispatch:      # allows you to trigger manually
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Fetch LeetCode Stats
+        run: |
+          curl -o leetcode-card.png "https://leetcard.jacoblin.cool/PranavKuramkoteSudhir?theme=dark&ext=heatmap"
+
+      - name: Commit & Push updated card
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add leetcode-card.png
+          git commit -m "Update LeetCode stats"
+          git push
