@@ -26,10 +26,6 @@ Data Science and Machine Learning professional with experience in building end-t
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
 ![Jira](https://img.shields.io/badge/-Jira-0052CC?style=flat&logo=jira&logoColor=white)
 
-## 🏆 LeetCode Stats
-
-![LeetCode Stats](./leetcode-card.png)
-
 
 ## 📫 Connect with me:
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pranav-kuramkote-sudhir-a46359168/)
